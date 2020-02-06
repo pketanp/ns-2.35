@@ -78,10 +78,10 @@ $ sudo apt-get install alien dpkg-dev debhelper build-essential
 
 To convert a package from RPM to debian format, use this command:
 
-$ sudo alien packagename.rpm
+$ sudo alien [packagename].rpm
 
 To install the package:
 
-$ sudo dpkg -i packagename.deb
+$ sudo dpkg -i [packagename].deb
 
 
