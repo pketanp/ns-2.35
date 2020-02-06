@@ -11,6 +11,8 @@ $ yum update
 
 Download https://drive.google.com/file/d/0B7S255p3kFXNVVlxR0ZNRGVORjQ/view
 
+$ sudo yum groupinstall "X Software Development"
+
 $ tar xvf ns-allinone-2.35_gcc5.tar.gz
 
 $ cd ns-allinone-2.35/
@@ -28,6 +30,44 @@ $ sudo make install
 $ reboot
 
 
+# or
+
+Download http://downloads.sourceforge.net/project/nsnam/allinone/ns-allinone-2.34/ns-allinone-2.34.tar.gz
+
+$ tar xf ns-allinone-2.34.tar.gz
+
+$ sudo yum install gcc make libX11-devel libXt-devel libXmu-devel
+
+$ sudo yum install compat-gcc-34 compat-gcc-34-c++
+
+$ cd ns-allinone-2.34
+
+$ CXX=g++34 ./install
+
+Configure the environmental variables for ns-2 and nam, and add the executables to the PATH so that we can use ns and nam directly.
+
+Add to ~/.bashrc if you use bash
+
+NS_HOME=[/full/path/to/]ns-allinone-2.34
+PATH=$NS_HOME/bin:$NS_HOME/tcl8.4.18/unix:$NS_HOME/tk8.4.18/unix:$PATH
+export PATH
+
+or
+
+Add to ~/.cshrc_user if you use c shell
+
+setenv NS_HOME "[/full/path/to/]ns-allinone-2.34"
+setenv PATH "${PATH}:${NS_HOME}/bin:${NS_HOME}/tcl8.4.18/unix:${NS_HOME}/tk8.4.18/unix"
+setenv LD_LIBRARY_PATH "${NS_HOME}/otcl-1.13:${NS_HOME}/ns-2.34/lib:/usr/local/lib"
+setenv TCL_LIBRARY "${NS_HOME}/tcl8.4.18/library"
+
+The installation is done by this step. Open another shell and try our installation:
+
+$ nam
+
+and
+
+$ ns
 
 # if using debian os's then
 
