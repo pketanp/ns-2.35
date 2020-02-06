@@ -1,17 +1,30 @@
 
 #install gcc53-c++-5.3.0-1.el6.x86_64
 
+Download https://drive.google.com/file/d/0B7S255p3kFXNbTBneHgwSzBodFE/view
+
 dnf install ./gcc53-c++-5.3.0-1.el6.x86_64.rpm
 
 # Then to install ns-allinone-2.35_gcc5
+
 $ yum update
+
+Download https://drive.google.com/file/d/0B7S255p3kFXNVVlxR0ZNRGVORjQ/view
+
 $ tar xvf ns-allinone-2.35_gcc5.tar.gz
+
 $ cd ns-allinone-2.35/
+
 $ sudo export CC=gcc53 CXX=g++53 && ./install
+
 $ cd ns-2.35/
+
 $ sudo make install
+
 $ cd ../nam-1.15/
-$ sudo make install 
+
+$ sudo make install
+
 $ reboot
 
 
@@ -41,9 +54,11 @@ We have another option :
 An older 32bits build, xgraph-12.1-7pclos2011.i586.rpm
 
 $ sudo dnf remove xgraph-12.1-1.pclos2013.x86_64
+
 $ sudo dnf install ./xgraph-12.1-7pclos2011.i586.rpm
 
 Test : $ cd xgraph-12.2/examples
+
 $ xgraph Animation.xg
 
 
